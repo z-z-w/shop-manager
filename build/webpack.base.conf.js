@@ -19,13 +19,14 @@ module.exports = {
       alias: {
           "views": path.resolve(__dirname, '../app/views'),
           "components": path.resolve(__dirname, '../app/components'),
-          "assets": path.resolve(__dirname, "../app/assets")
+          "assets": path.resolve(__dirname, "../app/assets"),
+          "service": path.resolve(__dirname, '../app/service')
       }
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.(js|jsx)$/,
                 use: "babel-loader",
                 include: APP_PATH
             },

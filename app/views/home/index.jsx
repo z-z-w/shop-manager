@@ -4,15 +4,18 @@ import './index.scss'
 
 import Header from 'components/header/index.jsx'
 import Side from 'components/side/index.jsx'
-import Wrapper from 'components/wrapper/index.jsx'
 
 class Home extends React.Component{
+    constructor(props) {
+        super(props);
+
+    }
     render() {
         return (
             <div id="wrapper">
                 <Header/>
                 <Side/>
-                <Wrapper/>
+                {this.props.children}
             </div>
         )
     }

@@ -10,16 +10,12 @@ class Side extends React.Component{
                 <div className="sidebar-collapse">
                     <ul className="nav" id="main-menu">
                         <li>
-                            <NavLink exact activeClassName="active-menu" to="/">
-                                <i className="fa fa-dashboard"></i> 首页</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/product" activeClassName="active-menu">
+                            <NavLink exact to="/product" activeClassName="active-menu">
                                 <i className="fa fa-shopping-bag"></i>商品管理
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/product-category" activeClassName="active-menu">
+                            <NavLink to="/category" activeClassName="active-menu">
                                 <i className="fa fa-list"></i>品类管理
                             </NavLink>
                         </li>

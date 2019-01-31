@@ -1,10 +1,19 @@
 import React from 'react'
+import Service from 'service/index.js'
 
 import './index.scss'
 
 class Header extends React.Component{
-    onLogout() {
+    constructor(props) {
+        super(props);
 
+    }
+
+    async onLogout() {
+        let res = await Service.logout()
+        if(res.status === 200 && res.data.status === 0) {
+            location.href = '/login'
+        }
     }
     render() {
         return (

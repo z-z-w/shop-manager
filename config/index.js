@@ -12,14 +12,22 @@ module.exports = {
     dev: {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
-        proxyTable: {},
+        proxyTable: {
+            "/api": {
+                target: 'http://localhost:3000',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': '/'   //重写接口
+                }
+            }
+        },
 
         // Template for index.html
         index: path.resolve(__dirname, '../public/index.html'),
 
         host: 'localhost',
         port: '8080',
-        autoOpenBrowser: true,
+        autoOpenBrowser: false,
         //是否生成sourceMap
         cssSourceMap: true
     },
