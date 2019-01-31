@@ -19,10 +19,17 @@ module.exports = {
                 pathRewrite: {
                     '^/api': '/'   //重写接口
                 }
+            },
+            "/other": {
+                target: 'http://adminv2.happymmall.com',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': '/'   //重写接口
+                }
             }
         },
 
-        // Template for index.html
+        // Template for index.jsx.html
         index: path.resolve(__dirname, '../public/index.html'),
 
         host: 'localhost',
@@ -36,7 +43,7 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
 
-        // Template for index.html
+        // Template for index.jsx.html
         index: path.resolve(__dirname, '../public/index.html'),
 
         // 是否生成sourceMap

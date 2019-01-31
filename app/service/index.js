@@ -26,7 +26,7 @@ class Service {
         )
     }
     getCategory(params) { // 获取品类子节点(
-        return axios.get(
+        return axios.post(
             `${baseUrl}/manage/category/get_category`,
             params
         )
@@ -84,10 +84,11 @@ class Service {
         )
     }
     uploadImg(params) { // 图片上传
-        return axios.get(
-            `${baseUrl}/manage/product/upload_img`,
-            params
-        )
+        return axios({
+            method: 'post',
+            url: `${baseUrl}/manage/product/upload_img`,
+            data: params
+        })
     }
     getProductDetail(params) { // 产品详情
         return axios.get(

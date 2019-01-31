@@ -1,8 +1,6 @@
 import React from 'react'
 import Service from 'service/index.js'
 
-import './index.scss'
-
 import PageTitle from 'components/page-title/index.jsx'
 import Pagination from 'components/pagination/index.jsx'
 
