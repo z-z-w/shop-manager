@@ -13,26 +13,26 @@ class Product extends React.Component{
         this.state = {
             pageNum: 1,
             total: 0,
-            userList: []
+            productList: []
         }
     }
     componentDidMount() {
-        this.getUsers()
+        this.getProducts()
     }
-    async getUsers() {
-        let res = await Service.getUsers({pageNum: this.state.pageNum})
+    async getProducts() {
+        let res = await Service.getProducts({pageNum: this.state.pageNum})
         if (res.status === 200 && res.data.status === 0) {
             let data = res.data.data
             this.setState({
                 total: data.total,
-                userList: data.list
+                productList: data.list
             })
         }
     }
     changePageNum(page) {
         this.setState({
             pageNum: page,
-        }, () => this.getUsers())
+        }, () => this.getProducts())
     }
 
     render() {
@@ -48,30 +48,44 @@ class Product extends React.Component{
                 </PageTitle>
                 <div className="row">
                     <div className="col-md-12">
-                        <table className="table table-striped table-bordered">
+                        <table className="table table_bg table-bordered">
                             <thead>
-                            <tr>
-                                <td>_id</td>
-                                <td>用户名</td>
-                                <td>电话</td>
-                                <td>邮箱</td>
-                                <td>注册时间</td>
-                            </tr>
+                                <tr>
+                                    <th width="5%">id</th>
+                                    <th width="60%">信息</th>
+                                    <th width="10%">价格</th>
+                                    <th width="10%">操作</th>
+                                    <th width="15%">状态</th>
+                                </tr>
                             </thead>
                             <tbody>
                             {
-                                this.state.userList && this.state.userList.map((user) => {
-                                    if (!user.isAdmin) {
-                                        return (
-                                            <tr key={user._id}>
-                                                <td>{ user._id }</td>
-                                                <td>{ user.username }</td>
-                                                <td>{ user.phone }</td>
-                                                <td>{ user.email }</td>
-                                                <td>{ new Date(+user.createTime).toLocaleString() }</td>
-                                            </tr>
-                                        )
-                                    }
+                                this.state.productList && this.state.productList.map((item) => {
+                                    return (
+                                        <tr key={item._id}>
+                                            <td>{ item._id }</td>
+                                            <td>
+                                                <p>{ item.name }</p>
+                                                <p>{ item.desc }</p>
+                                            </td>
+                                            <td>￥{ item.price }</td>
+                                            {
+                                                item.status ?
+                                                    <td>
+                                                        <span>在售</span>
+                                                        <span className="btn btn-info btn-xs opear">下架</span>
+                                                    </td> :
+                                                    <td>
+                                                        <span>已下架</span>
+                                                        <span className="btn btn-info btn-xs opear">上架</span>
+                                                    </td>
+                                            }
+                                            <td>
+                                                <Link to={`/product/detail/${item._id}`} className="opear">查看</Link>
+                                                <Link to={`/product/save/${item._id}`} className="opear">编辑</Link>
+                                            </td>
+                                        </tr>
+                                    )
                                 })
                             }
                             </tbody>

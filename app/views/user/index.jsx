@@ -38,7 +38,7 @@ class User extends React.Component{
                 <PageTitle title="用户列表"/>
                 <div className="row">
                     <div className="col-md-12">
-                        <table className="table table-striped table-bordered">
+                        <table className="table table-bordered table_bg">
                             <thead>
                                 <tr>
                                     <td>_id</td>

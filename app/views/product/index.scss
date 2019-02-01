@@ -1,18 +1,70 @@
+.form-group{
+  margin-bottom: 30px;
+}
 .save_container{
   position: absolute;
   top: 15px;
   right: 15px;
 }
-#uploadImgInput{
-  display: none;
+.img_input{
+  display: none !important;
 }
 .img_container{
   margin-bottom: 10px;
+  &.product{
+    height: 150px;
+  }
+}
+.sub_img{
+  position: relative;
+  float: left;
+  width: 150px;
+  height: 100%;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  &.detail{
+    i{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  i{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: rgba(0,0,0,.2);
+    font-size: 50px;
+    font-weight: 400;
+    color: #aaa;
+  }
+  &:hover i{
+    display: block;
+  }
 }
 .product_img{
-  float: left;
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.opear{
+  margin: 0 5px;
+}
+p {
+  font-size:16px;
+  line-height:24px;
+  padding-top: 0;
+}
+.mb{
+  margin-bottom: 10px;
+}
+.btn_submit{
+  position: absolute;
+  top: 800px;
+  left: 150px;
 }

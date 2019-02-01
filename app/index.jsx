@@ -10,6 +10,7 @@ import Order from 'views/order/index.jsx'
 import Category from 'views/category/index.jsx'
 import Product from 'views/product/index.jsx'
 import Save from 'views/product/save.jsx'
+import Detail from 'views/product/detail.jsx'
 import Service from "./service";
 
 const history = createBrowserHistory()
@@ -39,7 +40,8 @@ class App extends React.Component{
                         <Route path="/login" component={Login} />
                         <Home>
                             <Route exact path="/product" component={Product} />
-                            <Route path="/product/:option" component={Save} />
+                            <Route path="/product/save/:id?" component={Save} />
+                            <Route path="/product/detail/:id" component={Detail} />
                             <Route path="/category" component={Category} />
                             <Route path="/order" component={Order} />
                             <Route path="/user" component={User} />

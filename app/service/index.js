@@ -72,7 +72,7 @@ class Service {
         )
     }
     getProducts(params) { // 产品list
-        return axios.get(
+        return axios.post(
             `${baseUrl}/manage/product/list`,
             params
         )
@@ -84,14 +84,19 @@ class Service {
         )
     }
     uploadImg(params) { // 图片上传
-        return axios({
-            method: 'post',
-            url: `${baseUrl}/manage/product/upload_img`,
-            data: params
-        })
+        return axios.post(
+            `${baseUrl}/manage/product/upload_img`,
+            params
+        )
+    }
+    deleteImg(params) {   //删除图片
+        return axios.post(
+            `${baseUrl}/manage/product/delete_img`,
+            params
+        )
     }
     getProductDetail(params) { // 产品详情
-        return axios.get(
+        return axios.post(
             `${baseUrl}/manage/product/detail`,
             params
         )
@@ -103,14 +108,8 @@ class Service {
         )
     }
     saveProduct(params) { // 新增OR更新产品
-        return axios.get(
+        return axios.post(
             `${baseUrl}/manage/product/save`,
-            params
-        )
-    }
-    uploadText(params) { // 富文本上传图片
-        return axios.get(
-            `${baseUrl}/manage/product/upload_text`,
             params
         )
     }
