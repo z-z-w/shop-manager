@@ -78,7 +78,7 @@ class Service {
         )
     }
     searchProduct(params) { // 产品搜索
-        return axios.get(
+        return axios.post(
             `${baseUrl}/manage/product/search`,
             params
         )
@@ -102,7 +102,7 @@ class Service {
         )
     }
     setSaleStatus(params) { // 产品上下架
-        return axios.get(
+        return axios.post(
             `${baseUrl}/manage/product/set_sale_status`,
             params
         )
