@@ -7,6 +7,7 @@ import Home from 'views/home/index.jsx'
 import Login from 'views/login/index.jsx'
 import User from 'views/user/index.jsx'
 import Order from 'views/order/index.jsx'
+import OrderDetail from 'views/order/detail.jsx'
 import Category from 'views/category/index.jsx'
 import CategorySave from 'views/category/save.jsx'
 import Product from 'views/product/index.jsx'
@@ -46,7 +47,8 @@ class App extends React.Component{
                             <Route exact path="/category" component={Category} />
                             <Route exact path="/category/detail/:id" component={Category} />
                             <Route path="/category/save" component={CategorySave} />
-                            <Route path="/order" component={Order} />
+                            <Route exact path="/order" component={Order} />
+                            <Route path="/order/detail/:id" component={OrderDetail} />
                             <Route path="/user" component={User} />
                         </Home>
                         <Redirect from="/" to="/product"/>

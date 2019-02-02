@@ -5,7 +5,7 @@ const APP_PATH = path.resolve(__dirname, '../app')
 
 module.exports = {
     entry: {
-        app: './app/save.jsx',
+        app: './app/index.jsx',
         framework: ['react', 'react-dom']
     },
     output: {

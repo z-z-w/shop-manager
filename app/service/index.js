@@ -2,26 +2,14 @@ const baseUrl = '/api'
 
 class Service {
     getOrderList(params) { // 订单列表
-        return axios.get(
+        return axios.post(
             `${baseUrl}/manage/order/list`,
             params
         )
     }
     searchOrder(params) { // 订单查询
-        return axios.get(
+        return axios.post(
             `${baseUrl}/manage/order/search`,
-            params
-        )
-    }
-    getOrderDetail(params) { // 订单详情
-        return axios.get(
-            `${baseUrl}/manage/order/detail`,
-            params
-        )
-    }
-    sendOrder(params) { // 订单发货
-        return axios.get(
-            `${baseUrl}/manage/order/send`,
             params
         )
     }
