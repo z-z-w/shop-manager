@@ -8,9 +8,10 @@ import Login from 'views/login/index.jsx'
 import User from 'views/user/index.jsx'
 import Order from 'views/order/index.jsx'
 import Category from 'views/category/index.jsx'
+import CategorySave from 'views/category/save.jsx'
 import Product from 'views/product/index.jsx'
-import Save from 'views/product/save.jsx'
-import Detail from 'views/product/detail.jsx'
+import ProductSave from 'views/product/save.jsx'
+import ProductDetail from 'views/product/detail.jsx'
 import Service from "./service";
 
 const history = createBrowserHistory()
@@ -40,9 +41,11 @@ class App extends React.Component{
                         <Route path="/login" component={Login} />
                         <Home>
                             <Route exact path="/product" component={Product} />
-                            <Route path="/product/save/:id?" component={Save} />
-                            <Route path="/product/detail/:id" component={Detail} />
-                            <Route path="/category" component={Category} />
+                            <Route path="/product/save/:id?" component={ProductSave} />
+                            <Route path="/product/detail/:id" component={ProductDetail} />
+                            <Route exact path="/category" component={Category} />
+                            <Route exact path="/category/detail/:id" component={Category} />
+                            <Route path="/category/save" component={CategorySave} />
                             <Route path="/order" component={Order} />
                             <Route path="/user" component={User} />
                         </Home>

@@ -29,7 +29,7 @@ module.exports = {
             }
         },
 
-        // Template for index.jsx.html
+        // Template for save.jsx.html
         index: path.resolve(__dirname, '../public/index.html'),
 
         host: 'localhost',
@@ -43,7 +43,7 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
 
-        // Template for index.jsx.html
+        // Template for save.jsx.html
         index: path.resolve(__dirname, '../public/index.html'),
 
         // 是否生成sourceMap

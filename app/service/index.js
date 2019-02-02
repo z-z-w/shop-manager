@@ -32,20 +32,14 @@ class Service {
         )
     }
     addCategory(params) { // 增加节点
-        return axios.get(
+        return axios.post(
             `${baseUrl}/manage/category/add_category`,
             params
         )
     }
     setCategoryName(params) { // 修改品类名字
-        return axios.get(
+        return axios.post(
             `${baseUrl}/manage/category/set_category_name`,
-            params
-        )
-    }
-    getDeepCategory(params) { // 获取当前分类id及递归子节点categoryId
-        return axios.get(
-            `${baseUrl}/manage/category/get_deep_category`,
             params
         )
     }

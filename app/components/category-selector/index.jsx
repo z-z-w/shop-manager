@@ -65,8 +65,6 @@ export default class CategorySelector extends React.Component{
         if(res.status === 200 && res.data.status === 0) {
             this.setState({
                 secList: res.data.data
-            }, () => {
-                console.log("secid:"+this.state.secId);
             })
         }
     }
