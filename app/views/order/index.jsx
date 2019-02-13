@@ -52,7 +52,7 @@ class Order extends React.Component{
                 isSearching: data.isSearching
             })
         } else {
-            alert("搜索不到订单，换个关键词试试吧~")
+            alert("搜索不到订单，换个收件人试试吧~")
         }
     }
     changePageNum(page) {
@@ -72,7 +72,7 @@ class Order extends React.Component{
                     <div className="col-md-12">
                         <div className="form-inline">
                             <div className="form-group">
-                                <input type="text" className="form-control" placeholder="订单号"
+                                <input type="text" className="form-control" placeholder="收件人"
                                        value={this.state.q} onChange={(e)=>{this.onChangeQ(e)}}/>
                             </div>
                             <button type="button" className="btn btn-default opear"
@@ -100,11 +100,11 @@ class Order extends React.Component{
                                 this.state.productList && this.state.productList.map((item) => {
                                     return (
                                         <tr key={item._id}>
-                                            <td>{ item.orderNo }</td>
-                                            <td>{ item.receiverName }</td>
-                                            <td>{ item.address }</td>
-                                            <td>￥{ item.payment }</td>
-                                            <td>{item.createTime}</td>
+                                            <td>{ item._id }</td>
+                                            <td>{ item.address.name }</td>
+                                            <td>{ item.address.address }</td>
+                                            <td>￥{ (item.totalPrice / 100).toFixed(2) }</td>
+                                            <td>{new Date(Number(item.orderId)).toLocaleDateString()}</td>
                                             <td>
                                                 <Link to={{pathname: `/order/detail/${item._id}`, state: {item}}} className="opear">查看</Link>
                                             </td>

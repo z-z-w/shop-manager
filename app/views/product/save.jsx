@@ -188,7 +188,7 @@ export default class Save extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group good_detail">
                         <label className="col-md-2 control-label">商品详情</label>
                         <div className="col-md-10">
                             <div className="col-md-10 mb">
@@ -211,10 +211,10 @@ export default class Save extends React.Component{
                                 </div>
                             }
                         </div>
+                        <button className="btn btn-info btn_submit" onClick={() => this.onSubmit()}>
+                            {this.state._id ? '修改' : '添加'}
+                        </button>
                     </div>
-                    <button className="btn btn-info btn_submit" onClick={() => this.onSubmit()}>
-                        {this.state._id ? '修改' : '添加'}
-                    </button>
                 </div>
             </div>
         )

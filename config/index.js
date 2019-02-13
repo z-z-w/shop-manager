@@ -33,7 +33,7 @@ module.exports = {
         index: path.resolve(__dirname, '../public/index.html'),
 
         host: 'localhost',
-        port: '8080',
+        port: '1000',
         autoOpenBrowser: false,
         //是否生成sourceMap
         cssSourceMap: true

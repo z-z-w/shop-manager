@@ -24,35 +24,47 @@ export default class Detail extends React.Component{
                     <div className="form-group">
                         <label className="col-md-2 control-label">订单号</label>
                         <div className="col-md-5">
-                            <p className="form-control-static">{this.state.orderNo}</p>
+                            <p className="form-control-static">{this.state.orderId}</p>
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="col-md-2 control-label">创建时间</label>
                         <div className="col-md-5">
-                            <p className="form-control-static">{this.state.createTime}</p>
+                            <p className="form-control-static">{new Date(Number(this.state.orderId)).toLocaleDateString()}</p>
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="col-md-2 control-label">收件人</label>
                         <div className="col-md-5">
-                            <p className="form-control-static">{this.state.receiverName}</p>
+                            <p className="form-control-static">{this.state.address.name}</p>
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="col-md-2 control-label">收件地址</label>
                         <div className="col-md-5">
-                            <p className="form-control-static">{this.state.address}</p>
+                            <p className="form-control-static">{this.state.address.address}</p>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="col-md-2 control-label">订单状态</label>
+                        <div className="col-md-5">
+                            <p className="form-control-static">{this.state.orderStatus === 1 ? '待收货' : '已完成'}</p>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="col-md-2 control-label">支付方式</label>
+                        <div className="col-md-5">
+                            <p className="form-control-static">{this.state.payStatus[0]}</p>
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="col-md-2 control-label">订单金额</label>
                         <div className="col-md-5">
-                            <p className="form-control-static">￥{this.state.payment}</p>
+                            <p className="form-control-static">￥{ (this.state.totalPrice / 100).toFixed(2) }</p>
                         </div>
                     </div>
                     <div className="col-md-12">
-                        <table className="table table-striped table-bordered table-hover">
+                        <table className="table table-bordered">
                             <thead>
                                 <tr>
                                     <th width="15%">商品图片</th>
@@ -64,18 +76,18 @@ export default class Detail extends React.Component{
                             </thead>
                             <tbody>
                                 {
-                                    this.state.orderItemVoList.map(item => {
+                                    this.state.goods.map(item => {
                                         return (
                                             <tr key={item._id}>
                                                 <td>
                                                     <img className="p-img"
-                                                         src={item.productImage}
-                                                         alt={item.productName} />
+                                                         src={item.smpic}
+                                                         alt={item.name} />
                                                 </td>
-                                                <td>{item.productName}</td>
-                                                <td>￥{item.currentUnitPrice}</td>
-                                                <td>{item.quantity}</td>
-                                                <td>￥{item.totalPrice}</td>
+                                                <td>{item.name}</td>
+                                                <td>￥{item.price}</td>
+                                                <td>{item.count}</td>
+                                                <td>￥{item.price * item.count}</td>
                                             </tr>
                                         )
                                     })

@@ -11,9 +11,9 @@
 }
 .img_container{
   margin-bottom: 10px;
-  &.product{
-    height: 150px;
-  }
+  //&.product{
+  //  height: 150px;
+  //}
 }
 .sub_img{
   position: relative;
@@ -63,8 +63,11 @@ p {
 .mb{
   margin-bottom: 10px;
 }
+.good_detail{
+  position: relative;
+}
 .btn_submit{
   position: absolute;
-  top: 800px;
-  left: 150px;
+  top: 100px;
+  left: 130px;
 }
